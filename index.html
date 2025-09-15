@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Day04 Markdown Previewer</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main class="container">
+    <div class="card">
+      <div class="header">
+        <h1>Day04 Markdown Previewer</h1>
+        <div class="actions">
+          <button id="newBtn" class="btn ghost" title="新規">New</button>
+          <button id="copyBtn" class="btn ghost" title="コピー">Copy</button>
+          <button id="saveBtn" class="btn ghost" title="ダウンロード">Download</button>
+          <label class="btn ghost filelabel" title="読み込み">
+            Import <input id="fileIn" type="file" accept=".md,.markdown,text/markdown,text/plain" hidden>
+          </label>
+        </div>
+      </div>
+
+      <section class="panel grid">
+        <div class="pane">
+          <div class="pane-head">Markdown</div>
+          <textarea id="editor" spellcheck="false" placeholder="# 見出し
+- 箇条書き
+**強調** _italic_
+`コード`"></textarea>
+          <div id="dropzone" class="dropzone" hidden>ここに .md をドロップ</div>
+        </div>
+        <div class="pane">
+          <div class="pane-head">Preview</div>
+          <article id="preview" class="preview"></article>
+        </div>
+      </section>
+
+      <div class="footer small">
+        入力は自動保存されます（localStorage）。.md のドラッグ&ドロップで読み込み可能。
+      </div>
+    </div>
+  </main>
+  <script src="./main.js"></script>
+</body>
+</html>
